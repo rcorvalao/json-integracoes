@@ -8,9 +8,9 @@ import com.github.reinert.jjschema.Attributes;
 public class BKW02CustomerOrder {
 	
 	@Attributes(required = true)
-	private CustomerOrder data;
+	private CustomerOrder data = new CustomerOrder();
 	
-	private MetaData meta;
+	private MetaData meta = new MetaData();
 
 	public CustomerOrder getData() {
 		return data;
