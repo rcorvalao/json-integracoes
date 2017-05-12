@@ -25,6 +25,7 @@ public class JsonSchemaHelper {
 			JsonNode productSchema = schemaFactory.createSchema(data);		
 			listOfNodes.add(productSchema);
 			System.out.println(productSchema);
+			System.out.println("---");
 		}		
 		
 		return listOfNodes;

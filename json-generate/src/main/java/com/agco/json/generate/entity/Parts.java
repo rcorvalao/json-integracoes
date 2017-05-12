@@ -15,7 +15,7 @@ public class Parts {
 	@Attributes(minimum = 0, exclusiveMinimum = true, multipleOf = 1, required = true, description = "The requested quantity for the part. If is set to 0 it means that the dealer didn't buy")
 	private BigDecimal requestedQuantity;
 
-	@Attributes(maxLength = 50, required = true, description = "Part Number")
+	@Attributes(minLength = 1, maxLength = 50, required = true, description = "Part Number")
 	private String partNumber;
 
 	public BigDecimal getPlannerQuantity() {

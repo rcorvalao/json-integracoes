@@ -6,13 +6,13 @@ import com.github.reinert.jjschema.Attributes;
 
 public class Dealer {
 
-	@Attributes(maxLength = 8, required = true, description = "Dealer’s main location account number. The number sent will be the AGCO code")
+	@Attributes(minLength = 1, maxLength = 8, required = true, description = "Dealer’s main location account number. The number sent will be the AGCO code")
 	private String dealerCode;
 
 	@Attributes(required = true)
 	private List<Parts> parts;
 
-	@Attributes(maxLength = 100, required = true, description = "Recomendation unique ID number")
+	@Attributes(minLength = 1, maxLength = 100, required = true, description = "Recomendation unique ID number")
 	private String plannerOrderId;
 
 	public String getDealerCode() {
