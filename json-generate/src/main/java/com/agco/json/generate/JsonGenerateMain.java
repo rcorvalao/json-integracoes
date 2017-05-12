@@ -5,6 +5,7 @@ import java.util.List;
 import com.agco.json.generate.helper.JsonSchemaHelper;
 import com.agco.json.generate.integration.BKW02CustomerOrder;
 import com.agco.json.generate.integration.BKW03PurchaseOrder;
+import com.agco.json.generate.integration.BKW07SuperSession;
 import com.agco.json.generate.integration.BKW08Muo;
 import com.agco.json.generate.integration.BKW13OrderRecommendation;
 import com.google.gson.Gson;
@@ -32,8 +33,9 @@ public class JsonGenerateMain {
 		List<Class> listOfClass = new ArrayList<Class>();
 		listOfClass.add(BKW02CustomerOrder.class);
 		listOfClass.add(BKW03PurchaseOrder.class);
-		listOfClass.add(BKW13OrderRecommendation.class);
+		listOfClass.add(BKW07SuperSession.class);
 		listOfClass.add(BKW08Muo.class);
+		listOfClass.add(BKW13OrderRecommendation.class);
 
 		try {
 			JsonSchemaHelper.createSchema(listOfClass);
