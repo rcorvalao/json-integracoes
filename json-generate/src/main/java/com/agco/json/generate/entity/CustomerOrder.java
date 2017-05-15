@@ -1,5 +1,6 @@
 package com.agco.json.generate.entity;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.github.reinert.jjschema.Attributes;
@@ -8,41 +9,41 @@ import com.github.reinert.jjschema.Attributes;
 public class CustomerOrder {
 
 	@Attributes(format = "date-time", required = true, description = "Local AGCO date when the extract was run.")
-	private String extractionDateTime; //DateTime 2016-11-23T10:45:00+03:00 - 2016-11-23
+	private String extractionDateTime = "2016-11-23T10:45:00+03:00";
 
 	@Attributes(maxLength = 50, required = true, description = "Unique Customer Order Number.")
-	private String orderId;
+	private String orderId = "";
 
 	@Attributes(maxLength = 50, required = true, description = "Unique Customer ID. Can be used to filter non-plannable demand or to create reports for specific customers.")
-	private String customerId;
+	private String customerId = "";
 
 	@Attributes(maxLength = 100, required = false, description = "Customer Name.")
-	private String customerName;
+	private String customerName = "";
 
 	@Attributes(maxLength = 8, required = true, description = "Dealer’s location account number. The number sent will be the AGCO code")
 	private String dealerNumber = "1654549";
 
 	@Attributes(format = "full-date", required = true, description = "Date of order receipt / order entry into system (if possible line level data).")
-	private String orderDate; //Date YYYY-MM-DD
+	private String orderDate = "2016-11-23";
 
 	@Attributes(maxLength = 1, required = true, description = "Optional: Type of order, e.g. sale, workshop, transfer, return, etc.; used for filtering non-forecastable demand, e.g. adjustments")
-	private String orderType;
+	private String orderType = "W";
 	
 	@Attributes(maxLength = 20, required = false, description = "Type of requested delivery, e.g.  Regular, Expedite")
-	private String deliveryType;
+	private String deliveryType = "regular";
 
 	@Attributes(maxLength = 100, required = false, description = "Dealer Specific field.")
-	private String dealerFilter1;
+	private String dealerFilter1 = "";
 
 	@Attributes(maxLength = 100, required = false, description = "Dealer Specific field.")
-	private String dealerFilter2;
+	private String dealerFilter2 = "";
 
 	@Attributes(maxLength = 100, required = false, description = "Dealer Specific field.")
-	private String dealerFilter3;
+	private String dealerFilter3 = "";
 
 
 	@Attributes(minItems = 1, uniqueItems = true)
-	private List<CustomerOrderItem> orders;
+	private List<CustomerOrderItem> orders = Arrays.asList(new CustomerOrderItem(), new CustomerOrderItem());
 
 	public String getCustomerName() {
 		return customerName;

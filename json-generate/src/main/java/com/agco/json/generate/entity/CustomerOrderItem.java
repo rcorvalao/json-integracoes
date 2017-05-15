@@ -7,34 +7,34 @@ import com.github.reinert.jjschema.Attributes;
 public class CustomerOrderItem {
 
 	@Attributes(maxLength = 10, required = true, description = "Unique line number of end customer order line.")
-	private String orderLineNumber;
+	private String orderLineNumber = "";
 	@Attributes(maxLength = 50, required = true, description = "AGCO Part number. Only if the part number sold is a non-original type. The DMS should find the Original matching AGCO PN, when applicable.")
 	private String agcoPartNumber = "1480626M1";
 
 	@Attributes(format = "full-date", required = false, description = "Date for which delivery has been requested, if available.")
-	private String requestedDate;
+	private String requestedDate = "2016-11-23";
 	@Attributes(format = "full-date", required = false, description = "Date of actual demand, e.g. when machine broke down (rationale: in our planning we try to get as close as possible to the real demand of the customer) - line level data")
-	private String demandDate;
+	private String demandDate = "2016-11-23";
 	@Attributes(format = "full-date", required = false, description = "Date the order (line) was actually delivered to end customer (i.e. farmer). If lineStatus = closed then this field is required")
-	private String shippedDate;
+	private String shippedDate = "2016-11-23";
 
 	@Attributes(maxLength = 3, required = true, description = "Unit of measure")
-	private String unitOfMeasure;
+	private String unitOfMeasure = "M";
 
 	@Attributes(required = true, minimum = 0, multipleOf=1, exclusiveMinimum = true
 			, description = "Unit of measure for material  as related to quantities below. A value of 1 indicates that the part is sold in manufacturer units and a value greater than 1 indicates the number of whole retail units the dealer creates from a manufacturer unit. Number of pieces currently available for sale, in dealer retail units. - Exclude from this number pieces that are reserved for work orders and not yet counted as a sale. - Exclude from this number pieces that are reserved for parts tickets and not yet counted as a sale. - Exclude from this number pending outbound internal transfers")
-	private BigDecimal dealerPartsPerPackage;
+	private BigDecimal dealerPartsPerPackage = new BigDecimal("1.5");
 	@Attributes(required = true, minimum = 0, multipleOf=1, exclusiveMinimum = true, description = "Requested quantity of material.")
-	private BigDecimal requestedQuantity;
+	private BigDecimal requestedQuantity = new BigDecimal("1.5");
 
 	@Attributes(required = false, minimum = 0, multipleOf=1, exclusiveMinimum = true
 			, description = "Quantity actually shipped. If lineStatus = closed then this field is required")
-	private Integer shippedQuantity;
+	private Integer shippedQuantity = 15;
 
 	@Attributes(maxLength = 20, required = true, description = "Indicator if order line is open or completed, optionally also cancelled or partly completed.")
-	private String lineStatus;
+	private String lineStatus = "OPEN";
 	@Attributes(maxLength = 30, required = false, description = "Serial number of the machine for which the part is used (e.g. available in machine repair data) - used to improve planning for new product introductions / end of life planning.")
-	private String serialNumber;
+	private String serialNumber = "";
 	
 	
 	
