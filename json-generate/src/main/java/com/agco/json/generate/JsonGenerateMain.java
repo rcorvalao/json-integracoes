@@ -20,7 +20,6 @@ public class JsonGenerateMain {
 	public static void main(String[] args) {
 		
 		generateSchema();
-		
 		generateJson();
 	}
 
@@ -50,11 +49,9 @@ public class JsonGenerateMain {
 		listOfClass.add(BKW01InventoryData.class);
 		listOfClass.add(BKW02CustomerOrder.class);
 		listOfClass.add(BKW03PurchaseOrder.class);
-
 		listOfClass.add(BKW04Items.class);
 		listOfClass.add(BKW05Franchise.class);
-		listOfClass.add(BKW06PriceList.class);
-		
+		listOfClass.add(BKW06PriceList.class);		
 		listOfClass.add(BKW07SuperSession.class);
 		listOfClass.add(BKW08Muo.class);
 		listOfClass.add(BKW13OrderRecommendation.class);
