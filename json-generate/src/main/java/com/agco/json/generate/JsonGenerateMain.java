@@ -29,11 +29,9 @@ public class JsonGenerateMain {
 		objJsons.add(new BKW01InventoryData());
 		objJsons.add(new BKW02CustomerOrder());
 		objJsons.add(new BKW03PurchaseOrder());
-		
 		objJsons.add(new BKW04Items());
 		objJsons.add(new BKW05Franchise());
-		objJsons.add(new BKW06PriceList());
-		
+		objJsons.add(new BKW06PriceList());		
 		objJsons.add(new BKW07SuperSession());
 		objJsons.add(new BKW08Muo());
 		objJsons.add(new BKW13OrderRecommendation());
