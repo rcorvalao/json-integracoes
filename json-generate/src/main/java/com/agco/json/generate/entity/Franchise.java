@@ -5,10 +5,10 @@ import com.github.reinert.jjschema.Attributes;
 public class Franchise {
 
 	@Attributes(format = "date-time", required = true, description = "Local AGCO date when the extract was run.")
-	private String extractionDateTime;
+	private String extractionDateTime = "2016-11-23T10:45:00+03:00";
 
 	@Attributes(minLength = 1, maxLength = 50, required = true, description = "Part number")
-	private String partNumber;
+	private String partNumber = "CH1J4757";
 
 	public String getExtractionDateTime() {
 		return extractionDateTime;
