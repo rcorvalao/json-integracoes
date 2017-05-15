@@ -7,8 +7,14 @@ import com.github.reinert.jjschema.Attributes;
 @Attributes(title = "BKW05 - Franchise", description = "Send items franchise from AGCO to Barkawi")
 public class BKW05Franchise {
 
+	@Attributes(required = true)
 	private Franchise data;
 	private MetaData meta;
+
+	public BKW05Franchise() {
+		this.setData(new Franchise());
+		this.setMeta(new MetaData());
+	}
 
 	public Franchise getData() {
 		return data;

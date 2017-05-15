@@ -12,6 +12,11 @@ public class BKW07SuperSession {
 
 	private MetaData meta;
 
+	public BKW07SuperSession() {
+		this.setData(new SuperSession());
+		this.setMeta(new MetaData());
+	}
+
 	public SuperSession getData() {
 		return data;
 	}

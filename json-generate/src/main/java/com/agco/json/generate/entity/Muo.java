@@ -21,6 +21,15 @@ public class Muo {
 
 	@Attributes(minLength = 1, maxLength = 50, required = true, description = "Part number")
 	private String partNumber;
+	
+	public Muo() {
+		this.setChangeType("I");
+		this.setEndDate("2017-11-23");
+		this.setExtractionDateTime("2016-11-23T10:45:00+03:00");
+		this.setModelId("ABC123");
+		this.setPartNumber("CH1J4757");
+		this.setStartDate("2016-11-23");
+	}
 
 	public String getModelId() {
 		return modelId;

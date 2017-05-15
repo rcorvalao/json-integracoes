@@ -11,6 +11,11 @@ public class BKW13OrderRecommendation {
 	private OrderRecommendation data;
 
 	private MetaData meta;
+	
+	public BKW13OrderRecommendation() {
+		this.setData(new OrderRecommendation());
+		this.setMeta(new MetaData());
+	}
 
 	public OrderRecommendation getData() {
 		return data;

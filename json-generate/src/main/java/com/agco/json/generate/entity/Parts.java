@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import com.github.reinert.jjschema.Attributes;
 
 public class Parts {
-	
+
 	@Attributes(minimum = 0, exclusiveMinimum = true, multipleOf = 1, required = false, description = "The quantity suggested by the planner")
 	private BigDecimal plannerQuantity;
 
@@ -17,6 +17,13 @@ public class Parts {
 
 	@Attributes(minLength = 1, maxLength = 50, required = true, description = "Part Number")
 	private String partNumber;
+
+	public Parts() {
+		this.setInitialQuantity(new BigDecimal(10));
+		this.setPartNumber("CH1J4757");
+		this.setPlannerQuantity(new BigDecimal(12.5));
+		this.setRequestedQuantity(new BigDecimal(4));
+	}
 
 	public BigDecimal getPlannerQuantity() {
 		return plannerQuantity;
