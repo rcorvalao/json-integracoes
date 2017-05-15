@@ -1,9 +1,10 @@
 package com.agco.json.generate;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
 
+import com.agco.json.generate.helper.JsonHelper;
 import com.agco.json.generate.helper.JsonSchemaHelper;
 import com.agco.json.generate.integration.BKW01InventoryData;
 import com.agco.json.generate.integration.BKW02CustomerOrder;
@@ -19,24 +20,29 @@ public class JsonGenerateMain {
 
 	public static void main(String[] args) {
 		
-		generateSchema();
+//		generateSchema();
 		generateJson();
 	}
 
 	private static void generateJson() {		
-		List<Object> objJsons = new LinkedList<Object>();
 		
-		objJsons.add(new BKW01InventoryData());
-		objJsons.add(new BKW02CustomerOrder());
-		objJsons.add(new BKW03PurchaseOrder());
-		objJsons.add(new BKW04Items());
-		objJsons.add(new BKW05Franchise());
-		objJsons.add(new BKW06PriceList());		
-		objJsons.add(new BKW07SuperSession());
-		objJsons.add(new BKW08Muo());
-		objJsons.add(new BKW13OrderRecommendation());
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		JsonSchemaHelper.createJson(objJsons);
+		map.put("BKW01InventoryData", new BKW01InventoryData());
+		map.put("BKW02CustomerOrder", new BKW02CustomerOrder());
+		map.put("BKW03PurchaseOrder", new BKW03PurchaseOrder());
+		map.put("BKW04Items", new BKW04Items());
+		map.put("BKW05Franchise", new BKW05Franchise());
+		map.put("BKW06PriceList", new BKW06PriceList());
+		map.put("BKW07SuperSession", new BKW07SuperSession());
+		map.put("BKW08Muo", new BKW08Muo());
+		map.put("BKW13OrderRecommendation", new BKW13OrderRecommendation());
+				
+		try {
+			JsonHelper.createFile(map);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 
 	}
 

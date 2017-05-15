@@ -1,0 +1,26 @@
+{
+  "data" : {
+    "extractionDateTime" : "2016-11-23T10:45:00+03:00",
+    "orderId" : "123456",
+    "orderAgco" : "AOL-123456",
+    "dealerNumber" : "1654549",
+    "orderDate" : "2016-11-23",
+    "orderType" : "STOCK_ORDER",
+    "filter1" : "",
+    "filter3" : "",
+    "filter2" : "",
+    "orders" : [ {
+      "orderLineNumber" : "1",
+      "agcoPartNumber" : "1480626M1",
+      "sourceLocation" : "",
+      "receivedDate" : "2016-11-23",
+      "unitOfMeasure" : "M",
+      "requestedQuantity" : 1.5,
+      "receivedQuantity" : 1.5,
+      "lineStatus" : "OPEN"
+    } ]
+  },
+  "meta" : {
+    "messageId" : "VMI-44c79654-0ae8-427c-98a9-7de91d65c903"
+  }
+}

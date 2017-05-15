@@ -1,0 +1,12 @@
+{
+  "data" : {
+    "extractionDateTime" : "2016-11-23T10:45:00+03:00",
+    "priceListCode" : "BRA_BRL",
+    "partNumber" : "CH1J4757",
+    "discountGroup" : "DISCOUNT_GROUP",
+    "stockOrderPrice" : 8.5
+  },
+  "meta" : {
+    "messageId" : "VMI-44c79654-0ae8-427c-98a9-7de91d65c903"
+  }
+}
