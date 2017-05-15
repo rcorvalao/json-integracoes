@@ -1,13 +1,14 @@
 package com.agco.json.generate.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.github.reinert.jjschema.Attributes;
 
 public class Dealer {
 
-	@Attributes(minLength = 1, maxLength = 8, required = true, description = "Dealer’s main location account number. The number sent will be the AGCO code")
-	private String dealerCode;
+	@Attributes(minimum = 0, exclusiveMinimum = true, multipleOf = 1, required = true, description = "Dealer’s main location account number. The number sent will be the AGCO code")
+	private BigDecimal dealerCode;
 
 	@Attributes(required = true)
 	private List<Parts> parts;
@@ -15,11 +16,11 @@ public class Dealer {
 	@Attributes(minLength = 1, maxLength = 100, required = true, description = "Recomendation unique ID number")
 	private String plannerOrderId;
 
-	public String getDealerCode() {
+	public BigDecimal getDealerCode() {
 		return dealerCode;
 	}
 
-	public void setDealerCode(String dealerCode) {
+	public void setDealerCode(BigDecimal dealerCode) {
 		this.dealerCode = dealerCode;
 	}
 

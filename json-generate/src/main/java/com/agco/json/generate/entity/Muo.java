@@ -7,13 +7,13 @@ public class Muo {
 	@Attributes(minLength = 1, maxLength = 6, required = true, description = "Machine Series Number (MSN)")
 	private String modelId;
 
-	@Attributes(format = "date-time", required = false, description = "Start date")
+	@Attributes(format = "full-date", required = false, description = "Start date")
 	private String startDate;
 
 	@Attributes(minLength = 1, maxLength = 1, required = true, description = "Type of change")
 	private String changeType;
 
-	@Attributes(format = "date-time", required = false, description = "End date")
+	@Attributes(format = "full-date", required = false, description = "End date")
 	private String endDate;
 
 	@Attributes(format = "full-date", required = true, description = "Local AGCO date when the extract was run")
