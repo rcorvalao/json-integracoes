@@ -1,21 +1,22 @@
 package com.agco.json.generate.integration;
 
 import com.agco.json.generate.entity.MetaData;
-import com.agco.json.generate.entity.PriceList;
+import com.agco.json.generate.entity.SuperSession;
 import com.github.reinert.jjschema.Attributes;
 
-@Attributes(title = "BKW06 - PriceList", description = "Send public price list from AGCO to Barkawi")
-public class BKW06PriceList {
+@Attributes(title = "BKW07 - SuperSession", description = "Send supersession information from AGCO to Barkawi")
+public class BKW07SuperSession {
 
 	@Attributes(required = true)
-	private PriceList data;
+	private SuperSession data;
+
 	private MetaData meta;
 
-	public PriceList getData() {
+	public SuperSession getData() {
 		return data;
 	}
 
-	public void setData(PriceList data) {
+	public void setData(SuperSession data) {
 		this.data = data;
 	}
 
