@@ -11,6 +11,11 @@ public class BKW06PriceList {
 	private PriceList data;
 	private MetaData meta;
 
+	public BKW06PriceList() {
+		this.setData(new PriceList());
+		this.setMeta(new MetaData());
+	}
+
 	public PriceList getData() {
 		return data;
 	}

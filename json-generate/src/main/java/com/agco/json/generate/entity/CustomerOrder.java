@@ -20,7 +20,7 @@ public class CustomerOrder {
 	private String customerName;
 
 	@Attributes(maxLength = 8, required = true, description = "Dealer’s location account number. The number sent will be the AGCO code")
-	private String dealerNumber;
+	private String dealerNumber = "1654549";
 
 	@Attributes(format = "full-date", required = true, description = "Date of order receipt / order entry into system (if possible line level data).")
 	private String orderDate; //Date YYYY-MM-DD

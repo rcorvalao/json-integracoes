@@ -1,5 +1,7 @@
 package com.agco.json.generate.entity;
 
+import java.math.BigDecimal;
+
 import com.github.reinert.jjschema.Attributes;
 
 public class SuperSessionDetail {
@@ -14,7 +16,7 @@ public class SuperSessionDetail {
 	private String reversibilityCode;
 
 	@Attributes(minimum = 0, exclusiveMinimum = true, multipleOf = 1, required = true, description = "Required quantity of superseding part ")
-	private String newQuantity;
+	private BigDecimal newQuantity;
 
 	@Attributes(minLength = 1, maxLength = 4, required = true, description = "Required for selective supersessions to indicate which records belong together")
 	private String lineNumber;
@@ -24,6 +26,16 @@ public class SuperSessionDetail {
 
 	@Attributes(minLength = 1, maxLength = 4, required = true, description = "Required for selective supersessions to indicate which records belong together")
 	private String groupNumber;
+
+	public SuperSessionDetail() {
+		this.setBrokenSupersession("T");
+		this.setComment("Testing");
+		this.setGroupNumber("1234");
+		this.setLineNumber("1234");
+		this.setNewPartNumber("CH1J4757");
+		this.setNewQuantity(new BigDecimal(9.5));
+		this.setReversibilityCode("C");
+	}
 
 	public String getBrokenSupersession() {
 		return brokenSupersession;
@@ -49,11 +61,11 @@ public class SuperSessionDetail {
 		this.reversibilityCode = reversibilityCode;
 	}
 
-	public String getNewQuantity() {
+	public BigDecimal getNewQuantity() {
 		return newQuantity;
 	}
 
-	public void setNewQuantity(String newQuantity) {
+	public void setNewQuantity(BigDecimal newQuantity) {
 		this.newQuantity = newQuantity;
 	}
 

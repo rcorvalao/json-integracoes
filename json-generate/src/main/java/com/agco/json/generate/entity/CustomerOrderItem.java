@@ -9,7 +9,7 @@ public class CustomerOrderItem {
 	@Attributes(maxLength = 10, required = true, description = "Unique line number of end customer order line.")
 	private String orderLineNumber;
 	@Attributes(maxLength = 50, required = true, description = "AGCO Part number. Only if the part number sold is a non-original type. The DMS should find the Original matching AGCO PN, when applicable.")
-	private String agcoPartNumber;
+	private String agcoPartNumber = "1480626M1";
 
 	@Attributes(format = "full-date", required = false, description = "Date for which delivery has been requested, if available.")
 	private String requestedDate;

@@ -6,11 +6,16 @@ import com.github.reinert.jjschema.Attributes;
 
 @Attributes(title = "BKW08 - MUO", description = "Send machine which part is used from AGCO to Barkawi")
 public class BKW08Muo {
-	
+
 	@Attributes(required = true)
 	private Muo data;
 
-    private MetaData meta;
+	private MetaData meta;
+
+	public BKW08Muo() {
+		this.setData(new Muo());
+		this.setMeta(new MetaData());
+	}
 
 	public Muo getData() {
 		return data;
