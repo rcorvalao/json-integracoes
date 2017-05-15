@@ -14,12 +14,13 @@ import com.agco.json.generate.integration.BKW06PriceList;
 import com.agco.json.generate.integration.BKW07SuperSession;
 import com.agco.json.generate.integration.BKW08Muo;
 import com.agco.json.generate.integration.BKW13OrderRecommendation;
-import com.google.gson.Gson;
 
 public class JsonGenerateMain {
 
 	public static void main(String[] args) {
+		
 		generateSchema();
+		
 		generateJson();
 	}
 
