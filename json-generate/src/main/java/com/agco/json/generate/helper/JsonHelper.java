@@ -13,30 +13,28 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class JsonHelper {
 
-	private final static String JSON_FILES_PATH = "generated-files/jsons/";
-
 	@SuppressWarnings("rawtypes")
 	public static void createFile(HashMap<String, Object> map) throws Exception {
-		
-		if(map.isEmpty())
+
+		if (map.isEmpty())
 			throw new Exception("Empty map");
-		
+
 		Iterator json_objects = map.entrySet().iterator();
 
 		while (json_objects.hasNext()) {
-			
-			Map.Entry currentMap = (Map.Entry) json_objects.next();			
-			File newFile = FileHelper.createFile(JSON_FILES_PATH, currentMap.getKey().toString(), "json");
+
+			Map.Entry currentMap = (Map.Entry) json_objects.next();
+			File newFile = FileHelper.createFile(FileHelper.JSON_FILES_PATH, currentMap.getKey().toString(), "json");
 			JsonHelper.writeObjectIntoFile(currentMap.getValue(), newFile);
 		}
-		
-		System.out.println("Check created files here: " + JSON_FILES_PATH);
+
+		System.out.println("Check created files here: " + FileHelper.JSON_FILES_PATH);
 	}
-	
-	public static void writeObjectIntoFile(Object object, File file) throws JsonGenerationException, JsonMappingException, IOException
-	{
+
+	public static void writeObjectIntoFile(Object object, File file)
+			throws JsonGenerationException, JsonMappingException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
-		mapper.writeValue(file, object);		
+		mapper.writeValue(file, object);
 	}
 }

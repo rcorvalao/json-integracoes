@@ -1,8 +1,10 @@
 package com.agco.json.generate;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.agco.json.generate.helper.JsonHelper;
 import com.agco.json.generate.helper.JsonSchemaHelper;
@@ -15,13 +17,15 @@ import com.agco.json.generate.integration.BKW06PriceList;
 import com.agco.json.generate.integration.BKW07SuperSession;
 import com.agco.json.generate.integration.BKW08Muo;
 import com.agco.json.generate.integration.BKW13OrderRecommendation;
+import com.fasterxml.jackson.databind.JsonNode;
 
 public class JsonGenerateMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
-//		generateSchema();
 		generateJson();
+
+		generateSchema();
 	}
 
 	private static void generateJson() {		
@@ -46,7 +50,7 @@ public class JsonGenerateMain {
 
 	}
 
-	private static void generateSchema() {
+	private static void generateSchema() throws IOException {
 		@SuppressWarnings("rawtypes")
 		List<Class> listOfClass = new ArrayList<Class>();
 		
@@ -60,11 +64,10 @@ public class JsonGenerateMain {
 		listOfClass.add(BKW08Muo.class);
 		listOfClass.add(BKW13OrderRecommendation.class);
 
-		try {
-			JsonSchemaHelper.createSchema(listOfClass);
-		} catch (Exception e) {
-			System.out.println(e.toString());
-		}
+		Map<String, JsonNode> mapOfJsonSchemas = JsonSchemaHelper.createSchema(listOfClass);
+		
+		JsonSchemaHelper.writeFile(mapOfJsonSchemas);
+		
 	}
 
 }
