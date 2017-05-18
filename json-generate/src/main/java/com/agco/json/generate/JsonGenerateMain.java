@@ -23,12 +23,14 @@ public class JsonGenerateMain {
 
 	public static void main(String[] args) throws IOException {
 		
+		
 		generateSchema();
+		
 		generateJson();
+		
 	}
 
-	private static void generateJson() {		
-		
+	private static void generateJson() {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("BKW01InventoryData", new BKW01InventoryData());

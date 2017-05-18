@@ -10,11 +10,8 @@ import java.util.Map;
 import org.apache.commons.io.FileUtils;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.github.reinert.jjschema.v1.JsonSchemaFactory;
 import com.github.reinert.jjschema.v1.JsonSchemaV4Factory;
-import com.sun.xml.internal.fastinfoset.stax.events.CharactersEvent;
 
 public class JsonSchemaHelper {
 	
