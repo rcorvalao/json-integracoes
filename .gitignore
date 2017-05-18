@@ -159,4 +159,9 @@ buildNumber.properties
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 
+
+# Pasta gerada pela aplicacao
+generated-files/
+
+
 # End of https://www.gitignore.io/api/git,java,maven,eclipse,compressed,compression
