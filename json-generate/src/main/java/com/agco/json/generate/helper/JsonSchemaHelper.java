@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.github.reinert.jjschema.v1.JsonSchemaFactory;
 import com.github.reinert.jjschema.v1.JsonSchemaV4Factory;
 
+
 public class JsonSchemaHelper {
 	
 	@SuppressWarnings("rawtypes")

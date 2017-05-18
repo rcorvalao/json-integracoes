@@ -11,13 +11,15 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+
 public class JsonHelper {
 
 	@SuppressWarnings("rawtypes")
 	public static void createFile(HashMap<String, Object> map) throws Exception {
 
-		if (map.isEmpty())
+		if (map.isEmpty()) {
 			throw new Exception("Empty map");
+		}
 
 		Iterator json_objects = map.entrySet().iterator();
 
@@ -37,4 +39,5 @@ public class JsonHelper {
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		mapper.writeValue(file, object);
 	}
+	
 }
