@@ -5,6 +5,8 @@
 	<artifactId>json-generate</artifactId>
 	<version>1.0</version>
 
+
+
 	<dependencies>
 		<dependency>
 			<groupId>com.github.reinert</groupId>
@@ -27,6 +29,8 @@
 		</dependency>
 
 
+
 	</dependencies>
+
 
 </project>

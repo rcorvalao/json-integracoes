@@ -23,10 +23,8 @@ public class JsonGenerateMain {
 
 	public static void main(String[] args) throws IOException {
 		
-		generateJson();
-
 		generateSchema();
-		
+		generateJson();
 	}
 
 	private static void generateJson() {		
