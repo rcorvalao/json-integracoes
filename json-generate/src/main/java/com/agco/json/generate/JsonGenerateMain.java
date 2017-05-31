@@ -17,6 +17,8 @@ import com.agco.json.generate.integration.BKW06PriceList;
 import com.agco.json.generate.integration.BKW07SuperSession;
 import com.agco.json.generate.integration.BKW08Muo;
 import com.agco.json.generate.integration.BKW13OrderRecommendation;
+import com.agco.json.generate.integration.BKW14Error;
+import com.agco.json.generate.integration.BKW14ErrorFromBox;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class JsonGenerateMain {
@@ -42,6 +44,8 @@ public class JsonGenerateMain {
 		map.put("BKW07SuperSession", new BKW07SuperSession());
 		map.put("BKW08Muo", new BKW08Muo());
 		map.put("BKW13OrderRecommendation", new BKW13OrderRecommendation());
+		map.put("BKW14ErrorFromBox", new BKW14ErrorFromBox());
+		map.put("BKW14Error", new BKW14Error());
 				
 		try {
 			JsonHelper.createFile(map);
@@ -64,6 +68,8 @@ public class JsonGenerateMain {
 		listOfClass.add(BKW07SuperSession.class);
 		listOfClass.add(BKW08Muo.class);
 		listOfClass.add(BKW13OrderRecommendation.class);
+		listOfClass.add(BKW14ErrorFromBox.class);
+		listOfClass.add(BKW14Error.class);
 
 		Map<String, JsonNode> mapOfJsonSchemas = JsonSchemaHelper.createSchema(listOfClass);
 		
