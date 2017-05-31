@@ -1,5 +1,7 @@
 package com.agco.json.generate.entity;
 
+import java.util.List;
+
 import com.github.reinert.jjschema.Attributes;
 
 public class Franchise {
@@ -9,6 +11,8 @@ public class Franchise {
 
 	@Attributes(minLength = 1, maxLength = 50, required = true, description = "Part number")
 	private String partNumber = "CH1J4757";
+
+	private List<FranchiseItem> franchises;
 
 	public String getExtractionDateTime() {
 		return extractionDateTime;
@@ -26,4 +30,11 @@ public class Franchise {
 		this.partNumber = partNumber;
 	}
 
+	public List<FranchiseItem> getFranchises() {
+		return franchises;
+	}
+
+	public void setFranchises(List<FranchiseItem> franchises) {
+		this.franchises = franchises;
+	}
 }
