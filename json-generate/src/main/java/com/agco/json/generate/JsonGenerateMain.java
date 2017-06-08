@@ -41,7 +41,7 @@ public class JsonGenerateMain {
 		map.put("BKW04Items", new BKW04Items());
 		map.put("BKW05Franchise", new BKW05Franchise());
 		map.put("BKW06PriceList", new BKW06PriceList());
-		map.put("BKW07SuperSession", new BKW07SuperSession());
+		map.put("BKW07SuperSession"	, new BKW07SuperSession());
 		map.put("BKW08Muo", new BKW08Muo());
 		map.put("BKW13OrderRecommendation", new BKW13OrderRecommendation());
 		map.put("BKW14ErrorFromBox", new BKW14ErrorFromBox());
